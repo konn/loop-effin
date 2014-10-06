@@ -1,5 +1,5 @@
-`loop-effin` loop structure for `effin`
-=======================================
+`loop-effin` - loop structure for `effin`
+=========================================
 
 [![Build Status](https://travis-ci.org/konn/loop-effin.svg?branch=master)](https://travis-ci.org/konn/loop-effin) 
 [![loop-effin](http://img.shields.io/hackage/v/loop-effin.svg)](http://hackage.haskell.org/package/loop-effin)
