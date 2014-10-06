@@ -3,7 +3,7 @@
 {-# LANGUAGE MultiParamTypeClasses, NoMonomorphismRestriction, RankNTypes   #-}
 {-# LANGUAGE ScopedTypeVariables, TypeFamilies, TypeOperators               #-}
 {-# LANGUAGE UndecidableInstances                                           #-}
-module Control.Effect.Loop (Loop, loop, stepLoop,
+module Control.Effect.Loop (Loop, EffectLoop, loop, stepLoop,
                             LoopState, loop', toCPS, fromCPS,
                             continue, exit, continueWith, exitWith,
                             foreach, while, doWhile, once,
