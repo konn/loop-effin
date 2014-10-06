@@ -1,9 +1,12 @@
 language: haskell
 ghc: 7.8
 
+before_install:
+  - cabal install --only-dependencies -j
+
 script:
   - cabal configure --enable-tests --enable-benchmarks -v2  # -v2 provides useful information for debugging
-  - cabal build   # this builds all libraries and executables (including tests/benchmarks)
+  - cabal build -j  # this builds all libraries and executables (including tests/benchmarks)
   - cabal test
   - cabal check
   - cabal sdist   # tests that a source-distribution can be generated
@@ -12,7 +15,7 @@ script:
   - export SRC_TGZ=$(cabal info . | awk '{print $2 ".tar.gz";exit}') ;
     cd dist/;
     if [ -f "$SRC_TGZ" ]; then
-       cabal install "$SRC_TGZ";
+       cabal install -j "$SRC_TGZ";
     else
        echo "expected '$SRC_TGZ' not found";
        exit 1;
