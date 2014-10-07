@@ -2,7 +2,7 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 name:                loop-effin
-version:             0.1.0.1
+version:             0.1.1.0
 synopsis:            control-monad-loop port for effin
 description:         control-monad-loop like loop structure for effin.
 homepage:            https://github.com/konn/loop-effin
