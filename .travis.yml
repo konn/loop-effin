@@ -20,3 +20,11 @@ deploy:
   on:
     all_branches: true
     tags:         true
+
+after_deploy:
+  - sh ./upload-haddock.sh
+
+env:
+  global:
+    - HACKAGE_USER: "HiromiIshii"
+    - secure: ILexjCUC2kFvDpFMhPYNBa6Q29gZeiT8M49+9l1s+5e17hdBrXg5P9/2dDIar3IowQeS+STTW9Re7Ex3/mCJlCvz7nRGjKTDEkppFu7wUuO1HOInaP3OJKeT7NmQv9J85i2NF+b5DMvHeTSUi1dOIxW2DCIkOlMCCepTgDAdKuw=
