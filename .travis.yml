@@ -11,20 +11,17 @@ script:
 - export SRC_TGZ=$(cabal info . | awk '{print $2 ".tar.gz";exit}') ; cd dist/; if
   [ -f "$SRC_TGZ" ]; then cabal install -j2 "$SRC_TGZ"; else echo "expected '$SRC_TGZ'
   not found"; exit 1; fi; cd ../
-
 deploy:
   provider: hackage
-  username: "HiromiIshii"
+  username: HiromiIshii
   password:
     secure: gxhoVVO/PdAQoW1RCNtXGWf3SzIrsT2NEe9stfw+bDW1AuFFpTyhyRT1CC6ha6LkXcRZE812WWTMkKeT+Ne9f21Q0f2k+nNUWDAMtp4jFXdVITlVSLYza9QkA3KqUPssIa8vGE415lgdKDLn60g8+u6cc87V6BRDe7sO7lbdQTM=
   on:
     all_branches: true
-    tags:         true
-
+    tags: true
 after_deploy:
-  - sh ./upload-haddock.sh
-
+- sh ./upload-haddock.sh
 env:
   global:
-    - HACKAGE_USER: "HiromiIshii"
-    - secure: ILexjCUC2kFvDpFMhPYNBa6Q29gZeiT8M49+9l1s+5e17hdBrXg5P9/2dDIar3IowQeS+STTW9Re7Ex3/mCJlCvz7nRGjKTDEkppFu7wUuO1HOInaP3OJKeT7NmQv9J85i2NF+b5DMvHeTSUi1dOIxW2DCIkOlMCCepTgDAdKuw=
+  - HACKAGE_USER: HiromiIshii
+  - secure: Tk0MrYp0rBfhwweDu13ePDhaYIdVCEAcD971j1LWoKP1GwC9nWK7uG0wVBeP1sT21YqXB4bBzJxpXkkyDGnS+IITZfPKjKnrYP2VXiLSCWIKgrXRdTu2UX8SKURJ2VshvWB1i5oGwgyYGJPQLgrqdxKAm+EXbm7MbzWU6sLythU=
